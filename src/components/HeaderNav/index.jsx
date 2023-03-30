@@ -1,13 +1,16 @@
 import React from 'react'
 import "./style.less"
+import { Link } from 'react-router-dom'
 
 const HeaderNav  = () => {
   return (
     <div>
         <div id="home-header" className="clear-fix">
             <div className="home-header-left float-left">
-                <span>广州</span>
-                <i className="icon-angle-down"></i>
+                <Link to="/city">
+                    <span>北京</span>
+                    <i className="icon-angle-down"></i>
+                </Link>
             </div>
             <div className="home-header-right float-right">
                 <i className="iconfont icon-car"></i>
