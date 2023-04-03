@@ -12,7 +12,7 @@ const Home = () => {
     <div>
       <HeaderNav cityName={city.cityName}/>
       <Swiper Banners={[Banner1,Banner2,Banner3]}></Swiper>
-      <HomeHotList></HomeHotList>
+      <HomeHotList cityName={city.cityName}></HomeHotList>
     </div>
   )
 }
