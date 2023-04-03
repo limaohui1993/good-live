@@ -3,6 +3,7 @@ import axios from "../utils/request"
 //路径地址
 const base={
     baseUrl: 'http://localhost:5566',
+    cityUrl:"/api/aj/getcitycode",
     homehot1:"/api/home/hot1",
     homehot2:"/api/home/hot2",
 };
@@ -15,6 +16,9 @@ const api={
     },
     getHomeHot2(params){
         return axios.get(base.baseUrl+base.homehot2,{params})
+    },
+    getCityLists(){
+        return axios.get(base.cityUrl)
     }
 }
 
