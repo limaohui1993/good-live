@@ -7,6 +7,7 @@ import User from "../pages/Main/User"
 import BottomNav from "../components/BottomNav"
 import City from '../pages/City';
 import Layout from '../pages/Main/Layout'
+import Search from '../pages/Search';
 
 const AppRouter = () => {
   return (
@@ -24,6 +25,7 @@ const AppRouter = () => {
             </Routes>
             <Routes>
               <Route  path={"/city"} element={<City></City>}></Route>
+              <Route  path={"/search/:keywords"} element={<Search></Search>}></Route>
             </Routes>
       </Router>      
     </div>
