@@ -1,12 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./style.less"
-
+import DefaultImg from "../../../../assets/images/default.png"
+import {loadImageAsync} from "../../../../utils/loadImg"
 
 const Item = (props) => {
     const data = props.data
+    const [ currentImg,setCurrentImg]=useState(DefaultImg);
+    loadImageAsync(data.img).then(res=>{
+        setCurrentImg(res)
+    }).catch(err=>console.log(err))
     return (
         <div className="list-item">
-                <img src={data.img} alt="" />
+                <img src={currentImg} alt="" />
                 <div className="mask">
                     <div className="left">
                         <p>{data.title}</p>
