@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import "./style.less"
 import DefaultImg from "../../../../assets/images/default.png"
 import {loadImageAsync} from "../../../../utils/loadImg"
+import { Link } from 'react-router-dom'
 
 const Item = (props) => {
     const data = props.data
@@ -11,6 +12,7 @@ const Item = (props) => {
     }).catch(err=>console.log(err))
     return (
         <div className="list-item">
+            <Link to={`/details/${data.id}`}>
                 <img src={currentImg} alt="" />
                 <div className="mask">
                     <div className="left">
@@ -24,6 +26,7 @@ const Item = (props) => {
                         <p dangerouslySetInnerHTML={{ __html: data.price + "元/月" }}></p>
                     </div>
                 </div>
+            </Link>
         </div>
     )
 }

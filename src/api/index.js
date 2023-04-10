@@ -7,6 +7,7 @@ const base={
     homehot1:"/api/home/hot1",
     homehot2:"/api/home/hot2",
     search:"/api/search",
+    details:"/api/details",
 };
 
 //请求方法
@@ -23,6 +24,9 @@ const api={
     },
     search(params){
         return axios.get(base.baseUrl+base.search,{params})
+    },
+    details(params){
+        return axios.get(base.baseUrl+base.details,{params})
     }
 }
 

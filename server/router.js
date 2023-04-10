@@ -3,6 +3,7 @@ const router=express.Router();
 const homehot=require("./data/home/homehot")
 const url=require("url");
 const searchData = require("./data/search")
+const detailsData = require("./data/details")
 const Mock = require('mockjs')
 const Random = Mock.Random;
 
@@ -44,6 +45,11 @@ router.get("/search",(req, res) => {
         status: 200,
         result:data,
     })
+})
+//详情页面
+router.get("/details",(req, res) => {
+    const id=url.parse(req.url,true).query.id;
+    res.send(detailsData)
 })
 
  module.exports= router
