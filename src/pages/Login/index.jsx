@@ -1,10 +1,20 @@
 import React from 'react'
 import LoginView from './LoginView'
+import { useDispatch,useSelector } from 'react-redux'
+import * as loginActions from "../../redux/actions/login"
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const dispatch=useDispatch()
+  const navigate=useNavigate()
+  function onLoginEvent(user){
+    dispatch(loginActions.setLogin(user))
+    //回到上一级页面
+    navigate(-1)
+  }
   return (
     <div>
-      <LoginView></LoginView>
+      <LoginView onLoginEvent={onLoginEvent}></LoginView>
     </div>
   )
 }

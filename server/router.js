@@ -51,5 +51,22 @@ router.get("/details",(req, res) => {
     const id=url.parse(req.url,true).query.id;
     res.send(detailsData)
 })
+//登陆
+router.post("/login",(req, res) => {
+    const {userName,password}=req.body;
+    if(userName&&password){
+        res.send({
+            status:200,
+            token:"gguichiuhficuergiugruygrggtgrugfyugrelhuibj",
+            nick:userName
+        })
+    }else{
+        res.send({
+            status:400,
+            msg:"用户名密码错误"
+        })
+    }
+    
+})
 
  module.exports= router
