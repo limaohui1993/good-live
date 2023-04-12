@@ -9,6 +9,7 @@ import City from '../pages/City';
 import Layout from '../pages/Main/Layout'
 import Search from '../pages/Search';
 import Details from "../pages/Details"
+import Login from '../pages/Login';
 
 const AppRouter = () => {
   return (
@@ -28,6 +29,7 @@ const AppRouter = () => {
               <Route  path={"/city"} element={<City></City>}></Route>
               <Route  path={"/search/:keywords"} element={<Search></Search>}></Route>
               <Route  path={"/details/:id"} element={<Details></Details>}></Route>
+              <Route  path={"/login"} element={<Login></Login>}></Route>
             </Routes>
       </Router>      
     </div>

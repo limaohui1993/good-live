@@ -4,11 +4,12 @@ import "./style.less"
 const LoadMore = (props) => {
     const more=useRef();
     const [loadTop,setLoadTop]=useState(10000)
+    
     useEffect(()=>{
         let timer=null;
         //视口高度
         let winHeight=document.documentElement.clientHeight;
-        window.addEventListener('scroll', ()=>{
+        function scrollHandler(){
             if(more.current){
                 setLoadTop(more.current.getBoundingClientRect().top)
                 if(timer){
@@ -21,7 +22,13 @@ const LoadMore = (props) => {
                     },300)
                 }
             }
-        })
+        }
+        window.addEventListener('scroll', scrollHandler)
+        return ()=>{
+            // window.removeEventListener('scroll', scrollHandler)
+            // clearTimeout(timer)
+        }
+       
     },[loadTop])
   return (
     <div ref={more} className={"load"}>

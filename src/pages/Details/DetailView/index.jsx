@@ -3,25 +3,17 @@ import api from '../../../api';
 import DetailsHeader from "../../../components/PubHeader"
 import Swiper from '../../../components/Swiper';
 import "./style.less"
+import BuyAndStore from '../BuyAndStore';
 
 const DetailView = (props) => {
-    const [detailData,setDetailData]=useState({});
-    useEffect(()=>{
-        api.details({id:props.id}).then(res => {
-            if(res.status===200){
-        	    setDetailData(res.data)
-        	}
-        })
-    },[])
+    const detailData=props.detailData
 
   return (
         <div>
             <DetailsHeader title={'详情页'} />
-                {
-                    detailData.imgs?
-                    <div>
-                        <Swiper Banners={detailData.imgs} />
-                        <div label="详情" >
+            <div>
+                <Swiper Banners={detailData.imgs} />
+                <div label="详情" >
                             <div className="detail-info">
                                 <h3>{detailData.title}</h3>
                                 <div className="box">
@@ -54,11 +46,9 @@ const DetailView = (props) => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>:
-                    <div>等待数据加载</div>
-                    
-                }
+                </div>
+            </div>
+            <BuyAndStore></BuyAndStore>
         </div>
   )
 }

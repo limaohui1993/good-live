@@ -10,6 +10,10 @@ const SearchList = (props) => {
     const searchKeyWords=props.search
     useEffect(() =>{
         http()
+        return ()=>{
+            setSearchData([])
+            setHasMore(false)
+        }
     },[props.search])
     function loadMoreHandler(){
         http()
