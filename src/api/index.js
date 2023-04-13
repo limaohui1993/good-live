@@ -26,6 +26,9 @@ const api={
     search(params){
         return axios.get(base.baseUrl+base.search,{params})
     },
+    details(params){
+        return axios.get(base.baseUrl+base.details,{params})
+    },
     login(params){
         return axios.post(base.baseUrl+base.login,params)
     }

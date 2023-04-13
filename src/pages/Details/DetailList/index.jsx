@@ -15,7 +15,7 @@ const DetailList = (props) => {
     <div>
         {
             detailData.imgs?
-            <DetailView detailData={detailData}></DetailView>:
+            <DetailView detailData={detailData} id={props.id}></DetailView>:
             <div>等待数据加载</div>
         }
         
