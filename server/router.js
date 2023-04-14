@@ -4,6 +4,7 @@ const homehot=require("./data/home/homehot")
 const url=require("url");
 const searchData = require("./data/search")
 const detailsData = require("./data/details")
+const commentData = require("./data/comment")
 const Mock = require('mockjs')
 const Random = Mock.Random;
 
@@ -66,7 +67,14 @@ router.post("/login",(req, res) => {
             msg:"用户名密码错误"
         })
     }
-    
+})
+//评价
+router.get("/comment",(req, res) => {
+    const id=url.parse(req.url,true).query.id;
+    res.send({
+        status:200,
+        result:commentData
+    })
 })
 
  module.exports= router

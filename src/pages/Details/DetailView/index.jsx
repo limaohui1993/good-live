@@ -5,6 +5,7 @@ import Swiper from '../../../components/Swiper';
 import "./style.less"
 import BuyAndStore from '../BuyAndStore';
 import Tabs  from '../../../components/Tabs';
+import Comment from '../Comment';
 
 const DetailView = (props) => {
     const detailData=props.detailData
@@ -50,7 +51,7 @@ const DetailView = (props) => {
                                 </div>
                     </div>
                     <div label="评价">
-                    评价
+                    <Comment id={props.id}></Comment>
                     </div>  
                 </Tabs>
                 
