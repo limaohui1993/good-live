@@ -8,7 +8,10 @@ const Login = () => {
   const dispatch=useDispatch()
   const navigate=useNavigate()
   function onLoginEvent(user){
+    //写入redux
     dispatch(loginActions.setLogin(user))
+    //写入本地
+    localStorage.setItem("goodlive",JSON.stringify(user))
     //回到上一级页面
     navigate(-1)
   }
