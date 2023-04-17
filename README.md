@@ -1,3 +1,17 @@
+# 技术栈
+
+React + ReactHook + ReactRouter + Redux + Axios + Less + 第三方
+
+# 基本功能
+
+计划完成功能
+首页展示
+城市管理
+搜索功能
+上拉加载
+详情页
+收藏功能
+订单评价
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
