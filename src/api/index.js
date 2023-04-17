@@ -10,6 +10,8 @@ const base={
     details:"/api/details",
     login:"/api/login",
     comment:"/api/comment",
+    commentOrder:"/api/order/comment",
+    submitComment:"/api/order/submit/comment",
 };
 
 //请求方法
@@ -35,6 +37,12 @@ const api={
     },
     comment(params){
         return axios.get(base.baseUrl+base.comment,{params})
+    },
+    commentOrder(params){
+        return axios.get(base.baseUrl+base.commentOrder,{params})
+    },
+    submitComment(params){
+        return axios.post(base.baseUrl+base.submitComment,params)
     }
 }
 

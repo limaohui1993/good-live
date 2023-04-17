@@ -10,6 +10,7 @@ import Layout from '../pages/Main/Layout'
 import Search from '../pages/Search';
 import Details from "../pages/Details"
 import Login from '../pages/Login';
+import Order from '../pages/Order';
 
 const AppRouter = () => {
   return (
@@ -30,6 +31,7 @@ const AppRouter = () => {
               <Route  path={"/search/:keywords"} element={<Search></Search>}></Route>
               <Route  path={"/details/:id"} element={<Details></Details>}></Route>
               <Route  path={"/login"} element={<Login></Login>}></Route>
+              <Route  path={"/order"} element={<Order></Order>}></Route>
             </Routes>
       </Router>      
     </div>

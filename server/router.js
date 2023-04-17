@@ -5,6 +5,7 @@ const url=require("url");
 const searchData = require("./data/search")
 const detailsData = require("./data/details")
 const commentData = require("./data/comment")
+const orderData = require("./data/order")
 const Mock = require('mockjs')
 const Random = Mock.Random;
 
@@ -74,6 +75,24 @@ router.get("/comment",(req, res) => {
     res.send({
         status:200,
         result:commentData
+    })
+})
+//订单评价
+router.get("/order/comment",(req, res) => {
+    const userName=url.parse(req.url,true).query.userName;
+    // const id=url.parse(req.url,true).query.id;
+    res.send({
+        status:200,
+        result:orderData
+    })
+})
+//订单评价提交
+router.post("/order/submit/comment",(req, res) => {
+    const {userName,id,content}=req.body
+    console.log(userName,id,content)
+    res.send({
+        status:200,
+        msg:"评价成功"
     })
 })
 
